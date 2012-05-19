@@ -1,10 +1,10 @@
 class AuthenticationsController < ApplicationController
   def create
-    auth = request.env["rack.auth"]
-    logger.info auth
+    auth = request.env["omniauth.auth"]
+    logger.info "OmniAuth#{auth}"
     user = User.find_or_create_by_provider_and_uid(auth)
     sign_in(user)
-    redirect_to root_pa th, :notice => "Authentication successful."
+    redirect_to root_path, :notice => "Authentication successful."
   end
 
   def destroy

@@ -10,8 +10,8 @@ class User
   field :uid, type: String
 
   def self.find_or_create_by_provider_and_uid(auth)
-    user = User.where(:provider => auth['provider'], :uid => auth['uid'])
-    user ||= User.create(auth)
+    user = User.where(:provider => auth['provider'], :uid => auth['uid']).first
+    user ||= User.create(auth.slice('provider', 'uid', 'info'))
     user
   end
 end
