@@ -27,6 +27,10 @@ gem "bson_ext", "~> 1.5"
 gem 'heroku'
 gem 'thin'
 gem 'foreman'
+gem 'aws-sdk', '~> 1.3.4'
+gem "paperclip", "~> 3.0"
+gem "mongoid-paperclip", :require => "mongoid_paperclip"
+gem 'simple_form'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
