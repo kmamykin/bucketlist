@@ -27,6 +27,9 @@ gem 'omniauth-twitter'
 gem 'haml'
 gem "mongoid", "~> 2.4"
 gem "bson_ext", "~> 1.5"
+gem 'heroku'
+gem 'thin'
+gem 'foreman'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
