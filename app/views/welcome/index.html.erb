@@ -3,12 +3,8 @@
 <meta charset='utf-8'>
 <head>
 	<title>Home| Elegancy</title>
-	<link rel="stylesheet" type='text/css' href="css/bootstrap.min.css"/>
-	<link rel="stylesheet" type='text/css' href="css/bootstrap-responsive.min.css"/>
-	<link rel="stylesheet" type='text/css' href="css/style.css"/>
-	<script type='text/javascript' src="js/jquery-1.7.2.min.js"></script>
-	<script type='text/javascript' src="js/bootstrap.min.js"></script>
-
+  <%= stylesheet_link_tag 'application' %>
+  <%= javascript_include_tag 'application', :debug => Rails.env.development? %>
 </head>
 <body>
 
@@ -52,7 +48,7 @@
 		<br/><br/>
 		<div class="row-fluid">
 			<div class="mainlogo">
-				<img src="img/mainlogo.png" alt="Elegancy"/>
+        <%= image_tag "mainlogo.png" %>
 			</div>
 		</div><br/>
 		<!-- INTRO BOX -->

@@ -689,7 +689,7 @@ input[type="file"] {
   line-height: 28px;
 }
 input[type="file"] {
-  line-height: 18px \9;
+  line-height: 18px;
 }
 select {
   width: 220px;
@@ -1395,7 +1395,7 @@ table .span24 {
   height: 14px;
   line-height: 14px;
   vertical-align: text-top;
-  background-image: url("../img/glyphicons-halflings.png");
+  background-image: image-url("glyphicons-halflings.png");
   background-position: 14px 14px;
   background-repeat: no-repeat;
   *margin-right: .3em;
@@ -1405,7 +1405,7 @@ table .span24 {
   *margin-left: 0;
 }
 .icon-white {
-  background-image: url("../img/glyphicons-halflings-white.png");
+  background-image: image-url("glyphicons-halflings-white.png");
 }
 .icon-glass {
   background-position: 0      0;
@@ -2005,7 +2005,7 @@ table .span24 {
 }
 .btn:active,
 .btn.active {
-  background-color: #cccccc \9;
+  background-color: #cccccc;
 }
 .btn:first-child {
   *margin-left: 0;
@@ -2033,7 +2033,7 @@ table .span24 {
   -moz-box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.15), 0 1px 2px rgba(0, 0, 0, 0.05);
   box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.15), 0 1px 2px rgba(0, 0, 0, 0.05);
   background-color: #e6e6e6;
-  background-color: #d9d9d9 \9;
+  background-color: #d9d9d9;
   outline: 0;
 }
 .btn.disabled,
@@ -2117,7 +2117,7 @@ table .span24 {
 }
 .btn-primary:active,
 .btn-primary.active {
-  background-color: #004099 \9;
+  background-color: #004099;
 }
 .btn-warning {
   background-color: #faa732;
@@ -2142,7 +2142,7 @@ table .span24 {
 }
 .btn-warning:active,
 .btn-warning.active {
-  background-color: #c67605 \9;
+  background-color: #c67605;
 }
 .btn-danger {
   background-color: #da4f49;
@@ -2167,7 +2167,7 @@ table .span24 {
 }
 .btn-danger:active,
 .btn-danger.active {
-  background-color: #942a25 \9;
+  background-color: #942a25;
 }
 .btn-success {
   background-color: #5bb75b;
@@ -2192,7 +2192,7 @@ table .span24 {
 }
 .btn-success:active,
 .btn-success.active {
-  background-color: #408140 \9;
+  background-color: #408140;
 }
 .btn-info {
   background-color: #49afcd;
@@ -2217,7 +2217,7 @@ table .span24 {
 }
 .btn-info:active,
 .btn-info.active {
-  background-color: #24748c \9;
+  background-color: #24748c;
 }
 .btn-inverse {
   background-color: #414141;
@@ -2242,7 +2242,7 @@ table .span24 {
 }
 .btn-inverse:active,
 .btn-inverse.active {
-  background-color: #080808 \9;
+  background-color: #080808;
 }
 button.btn,
 input[type="submit"].btn {
@@ -2832,7 +2832,7 @@ input[type="submit"].btn.btn-mini {
 }
 .btn-navbar:active,
 .btn-navbar.active {
-  background-color: #080808 \9;
+  background-color: #080808;
 }
 .btn-navbar .icon-bar {
   display: block;
