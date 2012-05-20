@@ -4,8 +4,8 @@ Bucketlist::Application.routes.draw do
   match '/styles' => 'welcome#styles'
   resources :experiences do
     member do
-      post 'upvote'
-      post 'downvote'
+      get 'upvote'
+      get 'downvote'
     end
     resources :reviews
   end

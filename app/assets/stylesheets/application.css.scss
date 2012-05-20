@@ -14,3 +14,26 @@
  *= require style
  *= require bootstrap-wysihtml5
 */
+
+.vote {
+  text-align: center;
+  .upvote {
+    text-indent: -1000px;
+    height: 40px;
+    background-image: image-url("up.png");
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+  .downvote {
+    text-indent: -1000px;
+    height: 40px;
+    background-image: image-url("down.png");
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+  .count {
+    display: block;
+    font-weight: bold;
+    font-size: 240%;
+  }
+}

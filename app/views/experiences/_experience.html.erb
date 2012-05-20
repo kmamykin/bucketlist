@@ -1,8 +1,14 @@
 <div class="row-fluid borBox well deep experience" style="position:relative;">
-  <div class="span1">
-    <div><%= experience.votes_point %></div>
-    <div><%= button_to "Upvote", upvote_experience_path(experience), :method => :post %></div>
-    <div><%= button_to "Downvote", downvote_experience_path(experience), :method => :post %></div>
+  <div class="span1 vote">
+    <%= link_to upvote_experience_path(experience) do %>
+      <div class="upvote">
+      </div>
+    <% end %>
+    <div><span class="count"><%= experience.votes_point %></span></div>
+    <%= link_to downvote_experience_path(experience) do %>
+      <div class="downvote">
+      </div>
+    <% end %>
   </div>
   <div class="span4">
     <ul class="thumbnails">
@@ -24,7 +30,7 @@
     </div>
     <div class="reviews borBox well trans">
       <%= render experience.reviews %>
-      <%= render :partial => 'reviews/inline_new_review', :locals => {:experience => experience } %>
+      <%= render :partial => 'reviews/inline_new_review', :locals => {:experience => experience} %>
     </div>
   </div>
   <%= link_to "Edit", edit_experience_path(experience), :class => ['btn', 'edit'], :style => "position:absolute; top: 10px; right:10px;" %>
