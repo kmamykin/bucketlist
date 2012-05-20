@@ -20,9 +20,10 @@ class ApplicationController < ActionController::Base
     signed_in? && current_user.provider == "twitter" && (current_user.uid == "46238620" || current_user.uid == "14999406")
   end
 
-  def can_edit?(experience)
+  def can_edit?(object)
     return false unless signed_in?
-    admin? || experience.user == current_user
+    return true if admin?
+    object.user == current_user
   end
 
 end
