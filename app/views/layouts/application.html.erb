@@ -16,7 +16,7 @@
   <div id="topLink"></div>
   <div class="navbar navbar-fixed-top">
     <div class="navbar-inner">
-      <div class="container-fluid" style="height:40px;">
+      <div class="container-fluid" style="min-height:40px;">
         <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
@@ -73,18 +73,20 @@
     <h3>Sign in Details</h3>
   </div>
   <div class="modal-body">
-    <h2>Signin with:</h2>
-
+    <h2>Sign in with:</h2>
     <div>
-      <%= link_to "Twitter", '/auth/twitter' %>
-    </div>
-    <div>
-      <%= link_to "Facebook", '/auth/facebook' %>
+      <%= link_to '/auth/twitter', :class=>['btn', 'btn-large' ] do%>
+        <%= image_tag 'authbuttons/twitter_32.png' %>
+        <span style="font-weight: bold;">Twitter</span>
+      <% end %>
+      <%= link_to '/auth/facebook', :class=>['btn', 'btn-large' ] do%>
+        <%= image_tag 'authbuttons/facebook_32.png' %>
+        <span style="font-weight: bold;">Facebook</span>
+      <% end %>
     </div>
   </div>
   <div class="modal-footer">
     <a href="#" class="btn" data-dismiss="modal">Close</a>
-    <a href="#" class="btn btn-primary">Save changes</a>
   </div>
 </div>
 

@@ -10,6 +10,11 @@
         <a href='<%= experience.url %>' class="thumbnail" target='_blank'>
           <%= image_tag experience.image %>
         </a>
+        <div style="margin-left: 97px;">
+          <% %w(twitter facebook google).each do |service| %>
+            <%= image_tag "authbuttons/#{service}_32.png" %>
+          <% end %>
+        </div>
       </li>
     </ul>
   </div>
@@ -27,7 +32,7 @@
     </div>
   </div>
   <% if admin? %>
-    <%= link_to "Edit", edit_experience_path(experience), :class => ['btn', 'edit'], :style => "position:absolute; top: 10px; right:10px;" %>
+    <%= link_to "Edit", edit_experience_path(experience), :class => ['btn', 'edit'], :style => "position:absolute; top: 12px; right:10px;" %>
   <% end %>
 </div>
 
