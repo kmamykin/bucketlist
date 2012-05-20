@@ -31,6 +31,7 @@ gem 'aws-sdk', '~> 1.3.4'
 gem "paperclip", "~> 3.0"
 gem "mongoid-paperclip", :require => "mongoid_paperclip"
 gem 'simple_form'
+gem 'voteable_mongo', :path => '~/Projects/github/voteable_mongo'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'

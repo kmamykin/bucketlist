@@ -1,6 +1,7 @@
 class User
   include Mongoid::Document
   include Mongoid::Timestamps
+  include Mongo::Voter
 
   #attr_accessible :id, :picture_url, :provider, :uid
 
