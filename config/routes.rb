@@ -2,6 +2,11 @@ Bucketlist::Application.routes.draw do
   match '/auth/:provider/callback' => 'authentications#create'
   match '/signout' => 'authentications#signout', :as => :signout
   match '/styles' => 'welcome#styles'
-  resources :experiences
+  resources :experiences do
+    member do
+      post 'upvote'
+      post 'downvote'
+    end
+  end
   root :to => 'welcome#index'
 end

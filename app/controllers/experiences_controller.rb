@@ -1,6 +1,6 @@
 class ExperiencesController < ApplicationController
   def index
-    @experiences = Experience.all
+    @experiences = Experience.order_by('votes.point' => :desc)
   end
 
   def new
@@ -30,5 +30,17 @@ class ExperiencesController < ApplicationController
 
   def destroy
 
+  end
+
+  def upvote
+    @experience = Experience.find(params[:id])
+    current_user.vote(@experience, :up)
+    redirect_to root_path
+  end
+
+  def downvote
+    @experience = Experience.find(params[:id])
+    current_user.vote(@experience, :down)
+    redirect_to root_path
   end
 end

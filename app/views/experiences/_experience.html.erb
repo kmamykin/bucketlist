@@ -1,25 +1,32 @@
 <div class="row-fluid borBox well deep experience" style="position:relative;">
+  <div class="span1">
+    <div><%= experience.votes_point %></div>
+    <div><%= button_to "Upvote", upvote_experience_path(experience), :method => :post %></div>
+    <div><%= button_to "Downvote", downvote_experience_path(experience), :method => :post %></div>
+  </div>
   <div class="span4">
     <%= image_tag experience.image, :class => 'span4' %>
   </div>
-  <div class="span8">
+  <div class="span7">
     <div class="page-header inverse">
-      <h2><%= experience.title %></h2>
+      <%= link_to experience.url, :class=>'inverse', :style=>'', :target=>'_blank' do %>
+        <h2><%= experience.title %></h2>
+      <% end %>
     </div>
     <div>
       <%= experience.description %>
     </div>
   </div>
-  <%= link_to "Edit", edit_experience_path(experience), :class => ['btn', 'edit'], :style=>"position:absolute; top: 10px; right:10px;" %>
+  <%= link_to "Edit", edit_experience_path(experience), :class => ['btn', 'edit'], :style => "position:absolute; top: 10px; right:10px;" %>
 </div>
 
 <% content_for :javascripts do %>
   <script type="text/javascript">
-    $(function(){
+    $(function () {
       $('a.edit').hide();
-      $('.experience').hover(function(){
+      $('.experience').hover(function () {
         $(this).children('a.edit').show();
-      }, function(){
+      }, function () {
         $(this).children('a.edit').hide();
       });
     });
