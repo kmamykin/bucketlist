@@ -7,6 +7,12 @@ class AuthenticationsController < ApplicationController
     redirect_to root_path, :notice => "Authentication successful."
   end
 
+  def signout
+    reset_session
+    # redirect back here
+    redirect_to request.referer || root_path, :notice => "Signed out!"
+  end
+
   def destroy
     #@authentication = current_user.authentications.find(params[:id])
     #@authentication.destroy

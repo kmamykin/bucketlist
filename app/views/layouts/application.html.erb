@@ -23,14 +23,20 @@
 
         <div class="nav-collapse">
           <div class="pull-right">
-            <a class="btn btn-info btn-small round2" data-toggle="modal" href="#myModal">
-              <i class="icon-white icon-user"></i> Sign In
-            </a>
+            <% if signed_in? %>
+              <%= image_tag current_user.picture_url %>
+              <%= current_user.name %>
+            <% else %>
+              <a class="btn btn-info btn-small round2" data-toggle="modal" href="#myModal">
+                <i class="icon-white icon-user"></i> Sign In
+              </a>
+            <% end %>
           </div>
           <ul class="nav pull-right">
-            <li>
-              <%= link_to 'Submit Your Experience', new_experience_path, :class => "smooth" %>
-            </li>
+            <li> <%= link_to 'Submit Your Experience', new_experience_path, :class => "smooth" %> </li>
+            <% if signed_in? %>
+              <li> <%= link_to 'Signout', signout_path, :class => "smooth" %> </li>
+            <% end %>
           </ul>
         </div>
 
@@ -39,14 +45,13 @@
   </div>
   <!-- SOCIAL MEDIA -->
 
-
   <!-- CONTAINER STARTS -->
   <div class="container-fluid pad58">
     <br/><br/>
 
     <div class="row-fluid">
       <div class="mainlogo">
-        <%= image_tag "Bucket_List_2.png", :style=>"margin-left: -240px;" %>
+        <%= image_tag "Bucket_List_2.png", :style => "margin-left: -240px;" %>
       </div>
     </div>
 
@@ -57,34 +62,30 @@
 </div>
 
 <div class="bgbox">
-
 </div>
-
 
 <div class="modal hide fade" id="myModal">
   <div class="modal-header">
     <a class="close" data-dismiss="modal">×</a>
 
-    <h3>Login Details</h3>
+    <h3>Sign in Details</h3>
   </div>
   <div class="modal-body">
-    <h2> Animated Modal Here</h2>
+    <h2>Signin with:</h2>
 
-    <form class="form form-vertical">
-      <input type="text" id="username" placeholder="Enter Username"/>
-      <br/>
-      <input type="password" id="password" placeholder="Password"/>
-      <br/>
-      <button id="submitButton" class="btn btn-primary round2">Sign In</button>
-      <button id="regButton" class="btn btn-inverse round2">Register</button>
-
-    </form>
+    <div>
+      <%= link_to "Twitter", '/auth/twitter' %>
+    </div>
+    <div>
+      <%= link_to "Facebook", '/auth/facebook' %>
+    </div>
   </div>
   <div class="modal-footer">
     <a href="#" class="btn">Close</a>
     <a href="#" class="btn btn-primary">Save changes</a>
   </div>
 </div>
+
 
 </body>
 </html>

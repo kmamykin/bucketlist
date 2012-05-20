@@ -1,6 +1,8 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
 
+  helper_method :signed_in?, :current_user
+
   def sign_in(user)
     session['user_id'] = user.id
   end
