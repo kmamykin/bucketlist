@@ -1,5 +1,5 @@
 GIT
-  remote: https://kmamykin@github.com/kmamykin/voteable_mongo.git
+  remote: git://github.com/kmamykin/voteable_mongo.git
   revision: 454ac4edb4e925680b456ba32c38e8d3b9200deb
   specs:
     voteable_mongo (0.9.3)

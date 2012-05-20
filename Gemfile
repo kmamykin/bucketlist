@@ -32,7 +32,7 @@ gem "paperclip", "~> 3.0"
 gem "mongoid-paperclip", :require => "mongoid_paperclip"
 gem 'simple_form'
 # gem 'voteable_mongo', :path => '~/Projects/github/voteable_mongo'
-gem 'voteable_mongo', :git => 'https://kmamykin@github.com/kmamykin/voteable_mongo.git'
+gem 'voteable_mongo', :git => 'git://github.com/kmamykin/voteable_mongo.git'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
