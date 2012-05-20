@@ -3,51 +3,56 @@
 <head>
   <title>Bucketlist</title>
   <meta charset='utf-8'>
-  <%= stylesheet_link_tag    "application", :debug => Rails.env.development? %>
+  <%= stylesheet_link_tag "application", :debug => Rails.env.development? %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 </head>
 <body>
 
 <div class="fronty">
-<!-- THE TOP NAVBAR -->
-<div id="topLink"></div>
-<div class="navbar navbar-fixed-top">
-  <div class="navbar-inner">
-    <div class="container-fluid">
-      <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </a>
-      <%= link_to "Backetlist", root_path, :class => "brand main"%>
+  <!-- THE TOP NAVBAR -->
+  <div id="topLink"></div>
+  <div class="navbar navbar-fixed-top">
+    <div class="navbar-inner">
+      <div class="container-fluid">
+        <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </a>
 
-      <div class="nav-collapse">
-        <ul class="nav pull-left">
-          <li>
-            <%= link_to 'Submit Your Experience', new_experience_path, :class=>"smooth" %>
-          </li>
-        </ul>
-        <div class="pull-right">
-          <a class="btn btn-info btn-small round2" data-toggle="modal" href="#myModal">
-            <i class="icon-white icon-user"></i> Sign In
-          </a>
+        <div class="nav-collapse">
+          <div class="pull-right">
+            <a class="btn btn-info btn-small round2" data-toggle="modal" href="#myModal">
+              <i class="icon-white icon-user"></i> Sign In
+            </a>
+          </div>
+          <ul class="nav pull-right">
+            <li>
+              <%= link_to 'Submit Your Experience', new_experience_path, :class => "smooth" %>
+            </li>
+          </ul>
         </div>
-      </div>
 
+      </div>
     </div>
   </div>
-</div>
-<!-- SOCIAL MEDIA -->
+  <!-- SOCIAL MEDIA -->
 
 
-<!-- CONTAINER STARTS -->
-<div class="container-fluid pad58">
-<br/><br/>
+  <!-- CONTAINER STARTS -->
+  <div class="container-fluid pad58">
+    <br/><br/>
 
-<%= yield %>
+    <div class="row-fluid">
+      <div class="mainlogo">
+        <%= image_tag "Bucket_List_2.png", :style=>"margin-left: -240px;" %>
+      </div>
+    </div>
 
-</div>
+    <%= yield %>
+
+  </div>
 
 </div>
 
