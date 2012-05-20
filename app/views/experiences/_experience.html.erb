@@ -10,10 +10,17 @@
         <a href='<%= experience.url %>' class="thumbnail" target='_blank'>
           <%= image_tag experience.image %>
         </a>
-        <div style="margin-left: 97px;">
-          <% %w(twitter facebook google).each do |service| %>
-            <%= image_tag "authbuttons/#{service}_32.png" %>
-          <% end %>
+
+        <div style="text-align: center; margin-top: 10px;">
+        <span style="">
+          <span class='st_facebook_large' displayText='Facebook'></span>
+          <span class='st_twitter_large' displayText='Tweet'></span>
+          <span class='st_email_large' displayText='Email'></span>
+          <span class='st_sharethis_large' displayText='ShareThis'></span>
+
+          <script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script>
+          <script type="text/javascript">stLight.options({publisher:"2a8bfbf8-e506-4c99-bd55-c67e8461c2e0"}); </script>
+        </span>
         </div>
       </li>
     </ul>
