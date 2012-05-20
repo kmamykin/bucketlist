@@ -9,7 +9,7 @@ class ExperiencesController < ApplicationController
 
   def create
     if Experience.create(params[:experience])
-      redirect_to experiences_path, :notice => "Experience created"
+      redirect_to root_path, :notice => "Experience created"
     else
       render :new
     end

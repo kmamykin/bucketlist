@@ -24,13 +24,9 @@
 
       <div class="nav-collapse">
         <ul class="nav pull-left">
-
-          <li class="smooth"><a href="#topLink" class="smooth">Home</a></li>
-          <li><a href="#showcase" class="smooth">Showcase</a></li>
-          <li><a href="#features" class="smooth">Features</a></li>
-          <li><a href="#newElements" class="smooth">Elements</a></li>
-          <li><a href="#contactFooter" class="snooth">Contact</a></li>
-
+          <li>
+            <%= link_to 'Submit Your Experience', new_experience_path, :class=>"smooth" %>
+          </li>
         </ul>
         <div class="pull-right">
           <a class="btn btn-info btn-small round2" data-toggle="modal" href="#myModal">
