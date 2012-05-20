@@ -15,4 +15,5 @@ class Experience
   field :url, type: String
   field :description, type: String
 
+  embeds_many :reviews
 end

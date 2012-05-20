@@ -1,0 +1,32 @@
+<%= link_to "Review", "#experience_#{experience.id}", :class => ['btn', 'btn-inverse'], :data => {:toggle => 'modal'} %>
+
+<% content_for :modals do %>
+  <div class="modal span8" id="experience_<%= experience.id %>">
+    <div class="modal-header">
+      <span class="close" data-dismiss="modal">×</span>
+      <h3>
+        <%= experience.title %>
+        <small>Review</small>
+      </h3>
+    </div>
+    <%= simple_form_for([experience, Review.new], :html => {:class => '.form-vertical'}) do |form| %>
+      <div class="modal-body">
+        <%= form.input :title, :label=>false, :placeholder=>'Title', :input_html => { :style => 'width:100%' } %>
+        <%= form.input :text, :label=>false, :as=>:text, :input_html => { :style => 'width:100%' } %>
+      </div>
+      <div class="modal-footer">
+        <a href="#" class="btn" data-dismiss="modal">Close</a>
+        <%= form.button :submit, :class => 'btn-inverse' %>
+      </div>
+    <% end %>
+  </div>
+<% end %>
+
+<% content_for :javascripts do %>
+  <script type="text/javascript">
+    $(function(){
+      $('#experience_<%= experience.id %>').modal().modal('hide');
+      //$('textarea').wysihtml5();
+    })
+  </script>
+<% end %>

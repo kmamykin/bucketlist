@@ -15,12 +15,16 @@
   </div>
   <div class="span7">
     <div class="">
-      <%= link_to experience.url, :class=>'inverse', :style=>'', :target=>'_blank' do %>
-        <h2><%= experience.title %></h2>
+      <%= link_to experience.url, :class => 'inverse', :style => '', :target => '_blank' do %>
+        <h1><%= experience.title %></h1>
       <% end %>
     </div>
     <div>
       <%= raw experience.description %>
+    </div>
+    <div class="reviews borBox well trans">
+      <%= render experience.reviews %>
+      <%= render :partial => 'reviews/inline_new_review', :locals => {:experience => experience } %>
     </div>
   </div>
   <%= link_to "Edit", edit_experience_path(experience), :class => ['btn', 'edit'], :style => "position:absolute; top: 10px; right:10px;" %>

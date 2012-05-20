@@ -1,0 +1,15 @@
+<div data-toggle="collapse" data-target="#<%= review.id %>" style="position:relative;">
+  <div>
+    <h3>
+      <%= image_tag review.user.picture_url, :size => '40x40' %>
+      <%= review.title %>
+    </h3>
+  </div>
+  <div id="<%= review.id %>" class="collapse">
+    <%= raw review.text %>
+  </div>
+  <% if review.user == current_user %>
+    <%= link_to "Edit review", edit_experience_review_path(review.experience, review), :style=>"position:absolute; top: 10px; right:10px;" %>
+  <% end %>
+  <hr/>
+</div>

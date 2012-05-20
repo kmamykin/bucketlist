@@ -9,6 +9,8 @@
 </head>
 <body>
 
+<%= yield :modals %>
+
 <div class="fronty">
   <!-- THE TOP NAVBAR -->
   <div id="topLink"></div>
@@ -27,7 +29,7 @@
               <%= image_tag current_user.picture_url %>
               <%= current_user.name %>
             <% else %>
-              <a class="btn btn-info btn-small round2" data-toggle="modal" href="#myModal">
+              <a class="btn btn-info btn-small round2" data-toggle="modal" href="#signin">
                 <i class="icon-white icon-user"></i> Sign In
               </a>
             <% end %>
@@ -64,7 +66,7 @@
 <div class="bgbox">
 </div>
 
-<div class="modal hide fade" id="myModal">
+<div class="modal hide fade" id="signin">
   <div class="modal-header">
     <a class="close" data-dismiss="modal">×</a>
 
@@ -85,6 +87,7 @@
     <a href="#" class="btn btn-primary">Save changes</a>
   </div>
 </div>
+
 
 <%= yield :javascripts %>
 

@@ -7,6 +7,7 @@ Bucketlist::Application.routes.draw do
       post 'upvote'
       post 'downvote'
     end
+    resources :reviews
   end
   root :to => 'welcome#index'
 end
