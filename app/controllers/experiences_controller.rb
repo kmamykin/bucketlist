@@ -16,11 +16,16 @@ class ExperiencesController < ApplicationController
   end
 
   def edit
-
+    @experience = Experience.find(params[:id])
   end
 
   def update
-
+    @experience = Experience.find(params[:id])
+    if @experience.update_attributes(params[:experience])
+      redirect_to root_path, :notice => "Experience updated"
+    else
+      render :edit
+    end
   end
 
   def destroy

@@ -1,4 +1,4 @@
-<div class="row-fluid borBox well deep">
+<div class="row-fluid borBox well deep experience" style="position:relative;">
   <div class="span4">
     <%= image_tag experience.image, :class => 'span4' %>
   </div>
@@ -10,4 +10,18 @@
       <%= experience.description %>
     </div>
   </div>
+  <%= link_to "Edit", edit_experience_path(experience), :class => ['btn', 'edit'], :style=>"position:absolute; top: 10px; right:10px;" %>
 </div>
+
+<% content_for :javascripts do %>
+  <script type="text/javascript">
+    $(function(){
+      $('a.edit').hide();
+      $('.experience').hover(function(){
+        $(this).children('a.edit').show();
+      }, function(){
+        $(this).children('a.edit').hide();
+      });
+    });
+  </script>
+<% end %>
