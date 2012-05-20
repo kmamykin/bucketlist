@@ -43,10 +43,10 @@ function fixLayout(){
 	var wcen =parseInt($('.mainlogo img')[0].offsetWidth/2) +'px';
 	console.log(wcen);
 	$('.mainlogo img').css("margin-left","-"+wcen);
-	$('.brand.main').css({
-		"left":getDocWidth()/2 - $('.brand')[0].offsetWidth/2+'px',
-		"position":"absolute"
-	});
+//	$('.brand.main').css({
+//		"left":getDocWidth()/2 - $('.brand')[0].offsetWidth/2+'px',
+//		"position":"absolute"
+//	});
 	//$('.container-fluid.pad58').css('height',getDocHeight()-58+'px');
 }
 
