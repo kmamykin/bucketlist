@@ -5,16 +5,22 @@
     <div><%= button_to "Downvote", downvote_experience_path(experience), :method => :post %></div>
   </div>
   <div class="span4">
-    <%= image_tag experience.image, :class => 'span4' %>
+    <ul class="thumbnails">
+      <li class="span4">
+        <a href='<%= experience.url %>' class="thumbnail" target='_blank'>
+          <%= image_tag experience.image %>
+        </a>
+      </li>
+    </ul>
   </div>
   <div class="span7">
-    <div class="page-header inverse">
+    <div class="">
       <%= link_to experience.url, :class=>'inverse', :style=>'', :target=>'_blank' do %>
         <h2><%= experience.title %></h2>
       <% end %>
     </div>
     <div>
-      <%= experience.description %>
+      <%= raw experience.description %>
     </div>
   </div>
   <%= link_to "Edit", edit_experience_path(experience), :class => ['btn', 'edit'], :style => "position:absolute; top: 10px; right:10px;" %>

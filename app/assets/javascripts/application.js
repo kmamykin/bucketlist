@@ -13,4 +13,5 @@
 //= require "jquery-1.7.2.min"
 //= require "bootstrap"
 //= require "main"
+//= require bootstrap-wysihtml5-all
 //= require_self

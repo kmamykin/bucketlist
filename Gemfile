@@ -33,6 +33,7 @@ gem "mongoid-paperclip", :require => "mongoid_paperclip"
 gem 'simple_form'
 # gem 'voteable_mongo', :path => '~/Projects/github/voteable_mongo'
 gem 'voteable_mongo', :git => 'git://github.com/kmamykin/voteable_mongo.git'
+gem 'bootstrap-wysihtml5-rails'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
