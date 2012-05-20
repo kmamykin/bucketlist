@@ -6,10 +6,23 @@
     </h3>
   </div>
   <div id="<%= review.id %>" class="collapse">
-    <%= raw review.text %>
+    <div>
+      <%= raw review.text %>
+    </div>
+    <% if review.image.present? %>
+      <div class="row">
+        <div class="span4">
+          <ul class="thumbnails">
+            <li class="span4">
+              <%= image_tag review.image, :class => "thumbnail" %>
+            </li>
+          </ul>
+        </div>
+      </div>
+    <% end %>
   </div>
   <% if review.user == current_user %>
-    <%= link_to "Edit review", edit_experience_review_path(review.experience, review), :style=>"position:absolute; top: 10px; right:10px;" %>
+    <%= link_to "Edit review", edit_experience_review_path(review.experience, review), :style => "position:absolute; top: 10px; right:10px;" %>
   <% end %>
   <hr/>
 </div>
