@@ -1,6 +1,6 @@
 <%= simple_form_for([@experience, @review], :html => {:class => '.form-vertical'}) do |form| %>
   <div class="modal-body">
-    <%= form.input :text, :label=>false, :as=>:text, :input_html => { :id=>"experience_#{@experience.id}_text", :style => 'width:100%' } %>
+    <%= form.input :text, :label=>false, :as=>:text, :input_html => { :id=>"experience_#{@experience.id}_text", :style => 'height:10em;width:100%' } %>
     <%= form.input :image, :label=>false, :input_html => { :style => 'width:100%' } %>
   </div>
   <div class="form-actions">

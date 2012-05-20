@@ -1,6 +1,6 @@
 class ExperiencesController < ApplicationController
   def index
-    @experiences = Experience.order_by('votes.point' => :desc)
+    @experiences = Experience.all.order_by('votes.point'=>:desc)
   end
 
   def new
