@@ -8,7 +8,7 @@ class ExperiencesController < ApplicationController
   end
 
   def create
-    if Experience.create(params[:experience])
+    if Experience.create(params[:experience].merge(:user=>current_user))
       redirect_to root_path, :notice => "Experience created"
     else
       render :new

@@ -16,4 +16,5 @@ class Experience
   field :description, type: String
 
   embeds_many :reviews
+  belongs_to :user
 end

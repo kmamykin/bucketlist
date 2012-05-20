@@ -38,7 +38,7 @@
       <%= render experience.reviews %>
     </div>
   </div>
-  <% if admin? %>
+  <% if can_edit?(experience) %>
     <%= link_to "Edit", edit_experience_path(experience), :class => ['btn', 'edit'], :style => "position:absolute; top: 12px; right:10px;" %>
   <% end %>
 </div>
