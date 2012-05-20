@@ -20,7 +20,8 @@ class ExperiencesController < ApplicationController
   end
 
   def update
-    if Experience.update_attributes(params[:experience])
+    @experience = Experience.find(params[:id])
+    if @experience.update_attributes(params[:experience])
       redirect_to root_path, :notice => "Experience updated"
     else
       render :edit
