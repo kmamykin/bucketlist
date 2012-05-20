@@ -2,7 +2,7 @@
   <div>
     <h3>
       <%= image_tag review.user.picture_url, :size => '40x40' %>
-      <%= review.title %>
+      <%= review.user.name %>
     </h3>
   </div>
   <div id="<%= review.id %>" class="collapse">
