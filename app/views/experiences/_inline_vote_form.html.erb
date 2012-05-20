@@ -1,4 +1,4 @@
-<%= link_to "#experience_#{experience.id}_#{vote}", :data => {:toggle => 'modal'} do %>
+<%= link_to signed_in? ? "#experience_#{experience.id}_#{vote}" : "#signin", :data => {:toggle => 'modal'} do %>
   <div class="<%= vote.to_s %>vote">
   </div>
 <% end %>
