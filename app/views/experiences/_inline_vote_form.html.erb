@@ -1,17 +1,19 @@
-<%= link_to "Review", "#experience_#{experience.id}", :class => ['btn', 'btn-inverse'], :data => {:toggle => 'modal'} %>
+<%= link_to "#experience_#{experience.id}_#{vote}", :data => {:toggle => 'modal'} do %>
+  <div class="<%= vote.to_s %>vote">
+  </div>
+<% end %>
 
 <% content_for :modals do %>
-  <div class="modal span8" id="experience_<%= experience.id %>">
+  <div class="modal span8" id="experience_<%= experience.id %>_<%= vote %>">
     <div class="modal-header">
       <span class="close" data-dismiss="modal">×</span>
       <h3>
         <%= experience.title %>
-        <small>Review</small>
+        <small><%= vote.to_s.titleize + 'vote' %></small>
       </h3>
     </div>
-    <%= simple_form_for([experience, Review.new], :html => {:class => '.form-vertical'}) do |form| %>
+    <%= simple_form_for([experience, Review.new], :url => vote_experience_path(experience, :vote=>vote), :html => {:class => '.form-vertical'}) do |form| %>
       <div class="modal-body">
-        <%= form.input :title, :label=>false, :placeholder=>'Title', :input_html => { :style => 'width:100%' } %>
         <%= form.input :text, :label=>false, :as=>:text, :input_html => { :style => 'width:100%' } %>
       </div>
       <div class="modal-footer">
@@ -25,8 +27,8 @@
 <% content_for :javascripts do %>
   <script type="text/javascript">
     $(function(){
-      $('#experience_<%= experience.id %>').modal().modal('hide');
-      //$('textarea').wysihtml5();
+      $('#experience_<%= experience.id %>_<%= vote %>').modal().modal('hide');
+      $('textarea').wysihtml5();
     })
   </script>
 <% end %>

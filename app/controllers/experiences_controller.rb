@@ -32,15 +32,10 @@ class ExperiencesController < ApplicationController
 
   end
 
-  def upvote
+  def vote
     @experience = Experience.find(params[:id])
-    current_user.vote(@experience, :up)
-    redirect_to root_path
-  end
-
-  def downvote
-    @experience = Experience.find(params[:id])
-    current_user.vote(@experience, :down)
+    @experience.reviews.create(params[:review].merge(:user=>current_user))
+    current_user.vote(@experience, params[:vote].to_sym)
     redirect_to root_path
   end
 end
