@@ -1,7 +1,7 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
 
-  helper_method :signed_in?, :current_user
+  helper_method :signed_in?, :current_user, :admin?
 
   def sign_in(user)
     session['user_id'] = user.id
@@ -14,5 +14,9 @@ class ApplicationController < ActionController::Base
   def current_user
     nil unless signed_in?
     User.find(session['user_id'])
+  end
+
+  def admin?
+    signed_in? && current_user.provider == "twitter" && (current_user.uid == "46238620" || current_user.uid == "14999406")
   end
 end

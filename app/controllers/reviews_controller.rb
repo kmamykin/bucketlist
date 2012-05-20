@@ -9,6 +9,17 @@ class ReviewsController < ApplicationController
   end
 
   def update
+    @experience = Experience.find(params[:experience_id])
+    @review = @experience.reviews.find(params[:id])
+    if @review.update_attributes(params[:review])
+      redirect_to root_path, :notice => 'Review updated successfully'
+    else
+      redirect_to root_path, :alert => 'Failed to update review'
+    end
+  end
 
+  def edit
+    @experience = Experience.find(params[:experience_id])
+    @review = @experience.reviews.find(params[:id])
   end
 end
